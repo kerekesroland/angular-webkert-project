@@ -1,0 +1,12 @@
+<div class="venue-container">
+  <div class="image-container">
+    <img src="{{ venue.image }}" alt="{{ venue.name }}" />
+  </div>
+  <div class="info-container">
+    <div class="venue-title">{{ venue.name }}</div>
+    <div class="details-container">{{ venue.details }}</div>
+    <button [routerLink]="['/venues', venue.id]" class="to-wedding-button">
+      See more here
+    </button>
+  </div>
+</div>

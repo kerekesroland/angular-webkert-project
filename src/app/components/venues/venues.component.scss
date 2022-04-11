@@ -1,0 +1,21 @@
+.venues {
+  width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+  position: relative;
+  top: 5rem;
+}
+
+.filter-buttons {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  margin-left: 25%;
+  margin-top: 2rem;
+}
+
+.search-form {
+  background-color: #fcfcfc;
+  display: flex;
+  justify-content: center;
+}

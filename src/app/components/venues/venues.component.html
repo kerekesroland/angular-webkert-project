@@ -1,0 +1,32 @@
+<form class="search-form" [formGroup]="filterForm" (ngSubmit)="filterSearch()">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Bedroom</mat-label>
+    <input
+      matInput
+      placeholder="Bathrooms"
+      value="3"
+      formControlName="bedrooms"
+    />
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Bathroom</mat-label>
+    <input
+      matInput
+      placeholder="Bathrooms"
+      value="3"
+      formControlName="bathrooms"
+    />
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Square Feet</mat-label>
+    <input
+      matInput
+      placeholder="Square Feet"
+      value="500"
+      formControlName="squareFeet"
+    />
+  </mat-form-field>
+</form>
+<div *ngFor="let venue of filterSearch()" class="venues">
+  <app-venue [venue]="venue"></app-venue>
+</div>

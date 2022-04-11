@@ -1,0 +1,34 @@
+<div class="venue-container">
+  <div class="venue-title">{{ venue.name }}</div>
+  <div class="image-container">
+    <img src="{{ venue.image }}" alt="{{ venue.name }}" />
+    <div class="booking-container">
+      <mat-form-field label="Booking" appearance="fill">
+        <mat-label>Choose Check in Date</mat-label>
+        <input matInput [matDatepicker]="picker" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose Check out Date</mat-label>
+        <input matInput [matDatepicker]="picker2" />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker2"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="guests-input" appearance="fill">
+        <mat-label>Guests</mat-label>
+        <input matInput placeholder="guests" value="3" />
+      </mat-form-field>
+      <button class="book-button" mat-raised-button color="accent">
+        Book now
+      </button>
+    </div>
+  </div>
+
+  <div class="info-container">
+    <div class="details-container">{{ venue.details }}</div>
+  </div>
+</div>
