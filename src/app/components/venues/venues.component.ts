@@ -22,6 +22,7 @@ export class VenuesComponent implements OnInit {
         bathrooms: 3,
         bedrooms: 3,
         squareFeet: 500,
+        maxGuests: 12,
       },
       {
         id: 2,
@@ -33,6 +34,7 @@ export class VenuesComponent implements OnInit {
         bathrooms: 3,
         bedrooms: 5,
         squareFeet: 500,
+        maxGuests: 12,
       },
       {
         id: 3,
@@ -44,6 +46,7 @@ export class VenuesComponent implements OnInit {
         bathrooms: 1,
         bedrooms: 1,
         squareFeet: 500,
+        maxGuests: 12,
       },
 
       {
@@ -56,6 +59,7 @@ export class VenuesComponent implements OnInit {
         bathrooms: 2,
         bedrooms: 1,
         squareFeet: 500,
+        maxGuests: 12,
       },
 
       {
@@ -68,6 +72,7 @@ export class VenuesComponent implements OnInit {
         bathrooms: 5,
         bedrooms: 5,
         squareFeet: 500,
+        maxGuests: 12,
       },
 
       {
@@ -80,6 +85,7 @@ export class VenuesComponent implements OnInit {
         bathrooms: 5,
         bedrooms: 5,
         squareFeet: 500,
+        maxGuests: 12,
       },
     ];
   }

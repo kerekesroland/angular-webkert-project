@@ -21,9 +21,11 @@ const routes: Routes = [
   },
 
   {
-    path: 'login',
+    path: 'checkout',
     loadChildren: () =>
-      import('./components/login/login.module').then((m) => m.LoginModule),
+      import('./components/checkout/checkout.module').then(
+        (m) => m.CheckoutModule
+      ),
   },
 
   { path: '', redirectTo: 'main', pathMatch: 'full' },

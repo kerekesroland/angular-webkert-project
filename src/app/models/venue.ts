@@ -7,4 +7,5 @@ export interface venue {
   bathrooms: number;
   bedrooms: number;
   squareFeet: number;
+  maxGuests: number;
 }

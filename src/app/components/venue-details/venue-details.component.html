@@ -5,13 +5,13 @@
     <div class="booking-container">
       <mat-form-field label="Booking" appearance="fill">
         <mat-label>Choose Check in Date</mat-label>
-        <input matInput [matDatepicker]="picker" />
+        <input [(ngModel)]="checkInDate" matInput [matDatepicker]="picker" />
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Choose Check out Date</mat-label>
-        <input matInput [matDatepicker]="picker2" />
+        <input [(ngModel)]="checkOutDate" matInput [matDatepicker]="picker2" />
         <mat-datepicker-toggle
           matSuffix
           [for]="picker2"
@@ -20,15 +20,44 @@
       </mat-form-field>
       <mat-form-field class="guests-input" appearance="fill">
         <mat-label>Guests</mat-label>
-        <input matInput placeholder="guests" value="3" />
+        <input [(ngModel)]="numberOfGuests" matInput placeholder="guests" />
       </mat-form-field>
-      <button class="book-button" mat-raised-button color="accent">
+      <button
+        (click)="sendData()"
+        class="book-button"
+        mat-raised-button
+        color="accent"
+      >
         Book now
       </button>
     </div>
   </div>
 
   <div class="info-container">
-    <div class="details-container">{{ venue.details }}</div>
+    <div class="details-container">
+      <span style="color: rgb(0, 154, 154)" class="material-icons"
+        >view_comfy</span
+      >
+
+      <span class="squareFeet">{{ venue.squareFeet }} mt<sup>2</sup></span>
+
+      <span style="color: rgb(0, 154, 154)" class="material-icons"
+        >bathroom</span
+      >
+      <span class="bathrooms">{{ venue.bathrooms }} bathrooms</span>
+
+      <span style="color: rgb(0, 154, 154)" class="material-icons">bed</span>
+      <span class="bedrooms">{{ venue.bedrooms }} bedrooms</span>
+
+      <span style="color: rgb(0, 154, 154)" class="material-icons">person</span>
+      <span class="guests">{{ venue.maxGuests }} guests</span>
+    </div>
+  </div>
+
+  <div class="details2-container">
+    <h2 style="color: #282d31">Description</h2>
+    <div>
+      <p class="details">{{ venue.details }}</p>
+    </div>
   </div>
 </div>

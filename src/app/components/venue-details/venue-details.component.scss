@@ -7,15 +7,17 @@
   align-items: flex-start;
   margin-bottom: 1.5rem;
   position: relative;
-  top: 3rem;
+  top: 7rem;
   left: 5%;
 }
 
 .info-container {
   display: flex;
+  position: relative;
+  top: 1rem;
   justify-content: center;
   align-items: center;
-  width: 895.55px;
+  width: 1000px;
   height: 300px;
   background-color: #fff;
   position: relative;
@@ -44,6 +46,7 @@
 
 .book-button {
   position: relative;
+  background-color: #f3417d;
 }
 
 .guests-input {
@@ -66,4 +69,58 @@
   background-color: #fff;
   border: 1px solid #282d31;
   position: relative;
+}
+
+.details {
+  font-size: 0.95rem;
+  color: "#282d31";
+}
+
+.details-container {
+  position: relative;
+  top: 1rem;
+  display: flex;
+  padding-bottom: 2rem;
+}
+.details2-container {
+  position: relative;
+  width: 1000px;
+  top: 1.75rem;
+  padding-bottom: 2rem;
+}
+
+.bathrooms {
+  font-size: 1rem;
+  padding-left: 1rem;
+  position: relative;
+  top: 2px;
+  padding-right: 2.5rem;
+  color: "#282d31";
+}
+
+.bedrooms {
+  position: relative;
+  top: 2px;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 2.5rem;
+  color: "#282d31";
+}
+
+.guests {
+  position: relative;
+  top: 2px;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 2.5rem;
+  color: "#282d31";
+}
+
+.squareFeet {
+  position: relative;
+  bottom: 2px;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 2.5rem;
+  color: "#282d31";
 }

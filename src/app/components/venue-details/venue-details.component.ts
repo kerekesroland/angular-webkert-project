@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { venue } from 'src/app/models/venue';
 
 @Component({
@@ -8,7 +8,11 @@ import { venue } from 'src/app/models/venue';
   styleUrls: ['./venue-details.component.scss'],
 })
 export class VenueDetailsComponent implements OnInit {
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
+
+  checkInDate: any;
+  checkOutDate: any;
+  numberOfGuests: any;
 
   venues: venue[] = [
     {
@@ -21,6 +25,7 @@ export class VenueDetailsComponent implements OnInit {
       bathrooms: 3,
       bedrooms: 3,
       squareFeet: 500,
+      maxGuests: 12,
     },
     {
       id: 2,
@@ -32,6 +37,7 @@ export class VenueDetailsComponent implements OnInit {
       bathrooms: 3,
       bedrooms: 5,
       squareFeet: 500,
+      maxGuests: 12,
     },
     {
       id: 3,
@@ -43,6 +49,7 @@ export class VenueDetailsComponent implements OnInit {
       bathrooms: 1,
       bedrooms: 1,
       squareFeet: 500,
+      maxGuests: 12,
     },
 
     {
@@ -55,6 +62,7 @@ export class VenueDetailsComponent implements OnInit {
       bathrooms: 2,
       bedrooms: 1,
       squareFeet: 500,
+      maxGuests: 12,
     },
 
     {
@@ -67,6 +75,7 @@ export class VenueDetailsComponent implements OnInit {
       bathrooms: 5,
       bedrooms: 5,
       squareFeet: 500,
+      maxGuests: 12,
     },
 
     {
@@ -79,6 +88,7 @@ export class VenueDetailsComponent implements OnInit {
       bathrooms: 5,
       bedrooms: 5,
       squareFeet: 500,
+      maxGuests: 12,
     },
   ];
   venue: any;
@@ -87,5 +97,24 @@ export class VenueDetailsComponent implements OnInit {
       const id = params.get('id');
       this.venue = this.venues.find((venue) => venue.id === +id!);
     });
+  }
+  sendData() {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        venueId: this.venue.id,
+        venueImage: this.venue.image,
+        venueName: this.venue.name,
+        venueDetails: this.venue.details,
+        venuePrice: this.venue.price,
+        venueBathrooms: this.venue.bathrooms,
+        venueBedrooms: this.venue.bedrooms,
+        venueSquareFeet: this.venue.squareFeet,
+        venueMaxGuests: this.venue.maxGuests,
+        checkInDate: this.checkInDate,
+        checkOutDate: this.checkOutDate,
+        numberOfGuests: this.numberOfGuests,
+      },
+    };
+    this.router.navigate(['checkout'], navigationExtras);
   }
 }
