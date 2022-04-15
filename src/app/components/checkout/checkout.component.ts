@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class CheckoutComponent implements OnInit {
   venueObj = {};
   venue: any;
+  totalPrice: any;
   constructor(private router: Router) {
     const navigation = this.router.getCurrentNavigation();
     const state = navigation?.extras.state as {
@@ -24,23 +25,43 @@ export class CheckoutComponent implements OnInit {
       checkOutDate: any;
       numberOfGuests: any;
     };
-    this.venueObj = {
-      id: state.venueId,
-      image: state.venueImage,
-      name: state.venueName,
-      price: state.venuePrice,
-      bathrooms: state.venueBathrooms,
-      bedrooms: state.venueBedrooms,
-      squareFeet: state.venueSquareFeet,
-      maxGuests: state.venueMaxGuests,
-      checkInDate: state.checkInDate,
-      checkOutDate: state.checkOutDate,
-      numberOfGuests: state.numberOfGuests,
-    };
+    if (state) {
+      this.venueObj = {
+        id: state.venueId,
+        image: state.venueImage,
+        name: state.venueName,
+        price: state.venuePrice,
+        bathrooms: state.venueBathrooms,
+        bedrooms: state.venueBedrooms,
+        squareFeet: state.venueSquareFeet,
+        maxGuests: state.venueMaxGuests,
+        checkInDate: state.checkInDate,
+        checkOutDate: state.checkOutDate,
+        numberOfGuests: state.numberOfGuests,
+      };
+    } else {
+      this.venue = {};
+    }
   }
 
   ngOnInit(): void {
     this.venue = this.venueObj;
-    console.log(this.venue);
+
+    if (this.venue.checkInDate && this.venue.checkOutDate) {
+      const checkInDate = this.venue.checkInDate
+        .toLocaleString()
+        .substring(0, 8);
+      const checkOutDate = this.venue.checkOutDate
+        .toLocaleString()
+        .substring(0, 8);
+      const a: any = new Date(checkInDate);
+      const b: any = new Date(checkOutDate);
+      const diffInMs: any = a - b;
+      const diffInDays = Math.abs(diffInMs / (1000 * 60 * 60 * 24));
+      const totalPrice =
+        diffInDays * this.venue.price + this.venue.numberOfGuests * 500;
+
+      this.totalPrice = totalPrice;
+    }
   }
 }

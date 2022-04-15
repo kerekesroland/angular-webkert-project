@@ -1,0 +1,33 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  height: 100%;
+  margin-left: 13%;
+  gap: 5rem;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.input-item > label {
+  font-size: 1em;
+}
+
+.input-item > input {
+  padding: 10px;
+}
+
+.flex-date-container {
+  display: flex;
+  justify-content: space-around;
+}
