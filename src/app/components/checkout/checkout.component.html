@@ -7,13 +7,17 @@
       <div class="flex-date-item">
         <span>Arrival</span>
         <p class="booking-date">
-          {{ venue.checkInDate.toLocaleString().substring(0, 8) }}
+          {{
+            venue.checkInDate.toLocaleString().substring(0, 9).replace(",", "")
+          }}
         </p>
       </div>
       <div class="flex-date-item">
         <span>Leaving</span>
         <p class="booking-date">
-          {{ venue.checkOutDate.toLocaleString().substring(0, 8) }}
+          {{
+            venue.checkOutDate.toLocaleString().substring(0, 9).replace(",", "")
+          }}
         </p>
       </div>
       <div class="flex-date-item">
@@ -59,8 +63,12 @@
     </div>
     <div class="payments">
       <h3 class="paymens-title">Payment Details</h3>
-      <p class="payments-due">Payment Due now: ${{ totalPrice.toFixed(2) }}</p>
-      <p class="payments-total">Total Payment: ${{ totalPrice.toFixed(2) }}</p>
+      <p class="payments-due">
+        Payment Due now: &euro; {{ totalPrice.toFixed(2) }}
+      </p>
+      <p class="payments-total">
+        Total Payment: &euro; {{ totalPrice.toFixed(2) }}
+      </p>
       <p class="payments-info">All payments are in euros</p>
     </div>
   </div>

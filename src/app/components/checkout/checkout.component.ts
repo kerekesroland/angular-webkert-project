@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class CheckoutComponent implements OnInit {
   venueObj = {};
   venue: any;
-  totalPrice: any;
+  totalPrice: number = 0;
   constructor(private router: Router) {
     const navigation = this.router.getCurrentNavigation();
     const state = navigation?.extras.state as {
@@ -54,11 +54,11 @@ export class CheckoutComponent implements OnInit {
       const checkOutDate = this.venue.checkOutDate
         .toLocaleString()
         .substring(0, 8);
-      const a: any = new Date(checkInDate);
-      const b: any = new Date(checkOutDate);
-      const diffInMs: any = a - b;
+      const a: Date = new Date(checkInDate);
+      const b: Date = new Date(checkOutDate);
+      const diffInMs: number = +a - +b;
       const diffInDays = Math.abs(diffInMs / (1000 * 60 * 60 * 24));
-      const totalPrice =
+      const totalPrice: number =
         diffInDays * this.venue.price + this.venue.numberOfGuests * 500;
 
       this.totalPrice = totalPrice;

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webkert-beadando": {
+      "hosting": {
+        "Webkert-Project": [
+          "webkert-beadando"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webkert-beadando"
+  }
+}
