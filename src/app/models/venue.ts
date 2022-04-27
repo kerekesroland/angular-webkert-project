@@ -1,5 +1,5 @@
 export interface venue {
-  id: number;
+  id: string;
   name: string;
   price: number;
   image: string;

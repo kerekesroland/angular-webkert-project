@@ -3,7 +3,6 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { AuthService } from '../../shared/services/auth.service';
-import { FakeLoadingService } from '../../shared/services/fake-loading.service';
 
 @Component({
   selector: 'app-login',

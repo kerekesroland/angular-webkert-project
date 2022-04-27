@@ -1,7 +1,7 @@
 <div class="venue-container">
-  <div class="venue-title">{{ venue.name }}</div>
+  <div class="venue-title">{{ venue?.name }}</div>
   <div class="image-container">
-    <img src="{{ venue.image }}" alt="{{ venue.name }}" />
+    <img src="{{ venue?.image }}" alt="{{ venue?.name }}" />
     <div class="booking-container">
       <mat-form-field label="Booking" appearance="fill">
         <mat-label>Choose Check in Date</mat-label>
@@ -27,6 +27,7 @@
         class="book-button"
         mat-raised-button
         color="accent"
+        style="background-color: #1fe8b6"
       >
         Book now
       </button>
@@ -39,25 +40,25 @@
         >view_comfy</span
       >
 
-      <span class="squareFeet">{{ venue.squareFeet }} mt<sup>2</sup></span>
+      <span class="squareFeet">{{ venue?.squareFeet }} mt<sup>2</sup></span>
 
       <span style="color: rgb(0, 154, 154)" class="material-icons"
         >bathroom</span
       >
-      <span class="bathrooms">{{ venue.bathrooms }} bathrooms</span>
+      <span class="bathrooms">{{ venue?.bathrooms }} bathrooms</span>
 
       <span style="color: rgb(0, 154, 154)" class="material-icons">bed</span>
-      <span class="bedrooms">{{ venue.bedrooms }} bedrooms</span>
+      <span class="bedrooms">{{ venue?.bedrooms }} bedrooms</span>
 
       <span style="color: rgb(0, 154, 154)" class="material-icons">person</span>
-      <span class="guests">{{ venue.maxGuests }} guests</span>
+      <span class="guests">{{ venue?.maxGuests }} guests</span>
     </div>
   </div>
 
   <div class="details2-container">
     <h2 style="color: #282d31">Description</h2>
     <div>
-      <p class="details">{{ venue.details }}</p>
+      <p class="details">{{ venue?.details }}</p>
     </div>
   </div>
 </div>

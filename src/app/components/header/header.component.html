@@ -1,12 +1,24 @@
 <mat-toolbar class="navbar" color="primary">
-  <button routerLink="/" mat-raised-button color="accent" class="nav-title">
+  <button
+    style="background-color: #1fe8b6"
+    routerLink="/"
+    mat-raised-button
+    color="accent"
+    class="nav-title"
+  >
     Home
   </button>
-  <button routerLink="/venues" mat-raised-button color="accent">
+  <button
+    style="background-color: #1fe8b6"
+    routerLink="/venues"
+    mat-raised-button
+    color="accent"
+  >
     Extreme Places To Marry At
   </button>
 
   <button
+    style="background-color: #1fe8b6"
     *ngIf="!loggedInUser"
     routerLink="/login"
     mat-raised-button
@@ -15,6 +27,7 @@
     Login
   </button>
   <button
+    style="background-color: #1fe8b6"
     *ngIf="loggedInUser"
     (click)="logout()"
     routerLink="/login"

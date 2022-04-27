@@ -15,9 +15,11 @@ export class HeaderComponent implements OnInit {
       (user) => {
         console.log(user);
         this.loggedInUser = user;
+        localStorage.setItem('user', JSON.stringify(this.loggedInUser));
       },
       (err) => {
         console.error(err);
+        localStorage.setItem('user', JSON.stringify('null'));
       }
     );
   }

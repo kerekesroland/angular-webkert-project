@@ -53,11 +53,14 @@ export class CheckoutComponent implements OnInit {
         .substring(0, 8);
       const checkOutDate = this.venue.checkOutDate
         .toLocaleString()
-        .substring(0, 8);
+        .substring(0, 9);
       const a: Date = new Date(checkInDate);
       const b: Date = new Date(checkOutDate);
-      const diffInMs: number = +a - +b;
-      const diffInDays = Math.abs(diffInMs / (1000 * 60 * 60 * 24));
+
+      const dateDiff = b.getTime() - a.getTime();
+
+      const diffInDays = Math.ceil(dateDiff / (1000 * 3600 * 24));
+
       const totalPrice: number =
         diffInDays * this.venue.price + this.venue.numberOfGuests * 500;
 

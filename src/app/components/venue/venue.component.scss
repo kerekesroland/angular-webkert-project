@@ -32,20 +32,44 @@
 }
 
 .to-wedding-button {
-  position: relative;
-  top: 10px;
-  padding: 0.8rem;
-  width: 8rem;
-  height: 3rem;
-  background-color: #ff4081;
-  color: rgba(255, 255, 255);
-  border-radius: 0.6rem;
-  border: none;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px 25px;
   cursor: pointer;
+  border: 3px solid #1fe8b6;
+  color: #fff;
+  background-color: #1fe8b6;
+  position: relative;
+  top: 2rem;
+  border-radius: 5px;
 }
 
-.to-wedding-button:active {
-  opacity: 0.8;
+.to-wedding-button::before,
+.to-wedding-button::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: inherit;
+  transition: all 0.5s;
+}
+
+.to-wedding-button::before {
+  top: -15px;
+  left: -15px;
+  border-width: 3px 0 0 3px;
+}
+
+.to-wedding-button::after {
+  bottom: -15px;
+  right: -15px;
+  border-width: 0 3px 3px 0;
+}
+
+.to-wedding-button:hover::before,
+.to-wedding-button:hover::after {
+  width: calc(100% + 27px);
+  height: calc(100% + 27px);
 }
 
 .details-container {
