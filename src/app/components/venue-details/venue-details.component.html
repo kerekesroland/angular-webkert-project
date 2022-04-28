@@ -35,6 +35,7 @@
       <button
         (click)="sendData()"
         class="book-button"
+        matTooltip="If you are not logged in this will not work"
         mat-raised-button
         color="accent"
         style="background-color: #1fe8b6"
@@ -66,6 +67,7 @@
   </div>
 
   <div class="details2-container">
+    <mat-divider></mat-divider>
     <h2 style="color: #282d31">Description</h2>
     <div>
       <p class="details">{{ venue?.details }}</p>

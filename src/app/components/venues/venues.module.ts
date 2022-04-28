@@ -12,6 +12,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDividerModule } from '@angular/material/divider';
 @NgModule({
   declarations: [VenuesComponent, VenueComponent],
   imports: [
@@ -27,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDividerModule,
   ],
 })
 export class VenuesModule {}

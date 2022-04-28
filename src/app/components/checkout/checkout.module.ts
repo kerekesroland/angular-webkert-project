@@ -12,7 +12,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { MatSliderModule } from '@angular/material/slider';
+import { MatRadioModule } from '@angular/material/radio';
 @NgModule({
   declarations: [CheckoutComponent],
   imports: [
@@ -27,6 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
+    MatSliderModule,
+    MatRadioModule,
   ],
 })
 export class CheckoutModule {}

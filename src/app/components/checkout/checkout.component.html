@@ -46,7 +46,28 @@
         <label for="name">Address</label>
         <input type="text" id="name" placeholder="Gotham City" />
       </div>
+
+      <mat-radio-group
+        aria-label="Select an option"
+        style="
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 3rem;
+        "
+      >
+        <label style="text-align: center; font-weight: bold; color: #282d31"
+          >Select a paying method:
+        </label>
+        <mat-radio-button value="paypal">Paypal</mat-radio-button>
+        <mat-radio-button value="bankcard">Bank Card</mat-radio-button>
+      </mat-radio-group>
+
+      <label style="text-align: center; font-weight: bold; color: #282d31"
+        >How good were we?</label
+      >
+      <mat-slider min="1" max="5" step="0.5" value="1.5"></mat-slider>
     </div>
+
     <button
       class="to-wedding-button"
       mat-raised-button

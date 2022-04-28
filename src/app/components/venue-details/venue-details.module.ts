@@ -11,7 +11,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDividerModule } from '@angular/material/divider';
 @NgModule({
   declarations: [VenueDetailsComponent],
   imports: [
@@ -26,6 +27,8 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatNativeDateModule,
     FormsModule,
+    MatTooltipModule,
+    MatDividerModule,
   ],
 })
 export class VenueDetailsModule {}
