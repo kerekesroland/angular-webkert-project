@@ -1,5 +1,15 @@
 <div class="venue-container">
-  <div class="venue-title">{{ venue?.name }}</div>
+  <div class="venue-title">
+    <button
+      *ngIf="isAdminUser"
+      (click)="deleteVenue()"
+      mat-raised-button
+      color="accent"
+      style="background-color: #1fe8b6; position: relative; left: -40px"
+    >
+      Delete Venue</button
+    >{{ venue?.name }}
+  </div>
   <div class="image-container">
     <img src="{{ venue?.image }}" alt="{{ venue?.name }}" />
     <div class="booking-container">

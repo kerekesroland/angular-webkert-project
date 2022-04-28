@@ -10,12 +10,16 @@ export class HeaderComponent implements OnInit {
   constructor(private auth: AuthService) {}
 
   loggedInUser?: firebase.default.User | null;
+  isAdminUser?: firebase.default.User | null;
   ngOnInit(): void {
     this.auth.isUserLoggedIn().subscribe(
       (user) => {
-        console.log(user);
         this.loggedInUser = user;
         localStorage.setItem('user', JSON.stringify(this.loggedInUser));
+        if (this.loggedInUser?.email === 'admin@admin.com') {
+          this.isAdminUser = this.loggedInUser;
+          localStorage.setItem('admin', JSON.stringify(this.isAdminUser));
+        }
       },
       (err) => {
         console.error(err);
@@ -33,5 +37,7 @@ export class HeaderComponent implements OnInit {
       .catch((err) => {
         console.error(err);
       });
+    localStorage.removeItem('admin');
+    window.location.reload();
   }
 }

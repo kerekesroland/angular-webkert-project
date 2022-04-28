@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './shared/services/auth.guard';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
       import('./components/checkout/checkout.module').then(
         (m) => m.CheckoutModule
       ),
+    canActivate: [AuthGuard],
   },
 
   {
@@ -40,8 +42,16 @@ const routes: Routes = [
         (m) => m.RegisterModule
       ),
   },
-  { path: '', redirectTo: 'main', pathMatch: 'full' },
+  {
+    path: 'add_venue',
+    loadChildren: () =>
+      import('./components/add-venue/add-venue.module').then(
+        (m) => m.AddVenueModule
+      ),
+    canActivate: [AuthGuard],
+  },
 
+  { path: '', redirectTo: 'main', pathMatch: 'full' },
   { path: '**', redirectTo: '' },
 ];
 

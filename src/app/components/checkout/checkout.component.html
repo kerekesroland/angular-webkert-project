@@ -32,42 +32,51 @@
     <div class="input-group">
       <div class="input-item">
         <label for="name">Full Name</label>
-        <input type="text" id="name" placeholder="type your name" />
+        <input type="text" id="name" placeholder="I am Batman" />
       </div>
       <div class="input-item">
         <label for="Email">Email</label>
-        <input type="email" id="Email" placeholder="type your email" />
+        <input type="email" id="Email" placeholder="batman@gmail.com" />
       </div>
       <div class="input-item">
         <label for="phone">Phone Number</label>
-        <input type="text" id="phone" placeholder="type your number here" />
+        <input type="text" id="phone" placeholder="+36225664236" />
       </div>
       <div class="input-item">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" placeholder="type your name here" />
-      </div>
-      <div class="input-item">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" placeholder="type your name" />
+        <label for="name">Address</label>
+        <input type="text" id="name" placeholder="Gotham City" />
       </div>
     </div>
-    <button>Pay now</button>
+    <button
+      class="to-wedding-button"
+      mat-raised-button
+      color="accent"
+      style="background-color: #1fe8b6"
+    >
+      Pay now
+    </button>
   </div>
   <div class="payment-details-grid">
     <div class="image-container">
       <img
-        style="position: relative; width: 450px; height: 250px"
+        style="
+          position: relative;
+          width: 450px;
+          height: 250px;
+          border-radius: 15px;
+        "
         src="{{ venue.image }}"
         alt="{{ venue.name }}"
       />
     </div>
+
     <div class="payments">
       <h3 class="paymens-title">Payment Details</h3>
       <p class="payments-due">
-        Payment Due now: &euro; {{ totalPrice.toFixed(2) }}
+        Payment Due now: {{ totalPrice.toFixed(2) }}&euro;
       </p>
       <p class="payments-total">
-        Total Payment: &euro; {{ totalPrice.toFixed(2) }}
+        Total Payment: {{ totalPrice.toFixed(2) }}&euro;
       </p>
       <p class="payments-info">All payments are in euros</p>
     </div>

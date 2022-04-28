@@ -18,6 +18,16 @@
   </button>
 
   <button
+    *ngIf="isAdminUser"
+    style="background-color: #1fe8b6"
+    routerLink="/add_venue"
+    mat-raised-button
+    color="accent"
+  >
+    Add Venue
+  </button>
+
+  <button
     style="background-color: #1fe8b6"
     *ngIf="!loggedInUser"
     routerLink="/login"
