@@ -19,7 +19,7 @@ export class AuthService {
     return this.auth.user;
   }
 
-  logout() {
-    return this.auth.signOut();
+  async logout(): Promise<void> {
+    await this.auth.signOut();
   }
 }
