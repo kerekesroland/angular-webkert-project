@@ -14,12 +14,20 @@
   </mat-form-field>
   <span>
     <span
-      ><button mat-raised-button color="primary" (click)="login()">
+      ><button
+        mat-raised-button
+        style="background-color: #01ff65; color: white"
+        (click)="login()"
+      >
         Login
       </button></span
     >
     <span
-      ><button mat-raised-button color="primary" [routerLink]="'/register'">
+      ><button
+        mat-raised-button
+        style="background-color: #01ff65; color: white"
+        [routerLink]="'/register'"
+      >
         Sign Up
       </button></span
     >
